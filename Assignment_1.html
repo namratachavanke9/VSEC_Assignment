@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        .box{
+            width:300px;
+            margin:auto;
+            margin-top:80px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+        }
+
+        input{
+            width:90%;
+            padding:8px;
+            margin:8px;
+        }
+
+        button{
+            width:95%;
+            padding:10px;
+            background:blue;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:darkblue;
+        }
+
+        .page{
+            display:none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Sign Up Page -->
+
+<div id="signup" class="box">
+
+<h2>Sign Up</h2>
+
+<input type="text" id="user" placeholder="Enter Username">
+
+<input type="password" id="pass" placeholder="Enter Password">
+
+<button onclick="signup()">Sign Up</button>
+
+<p>
+Already have an account?
+<a href="#" onclick="showLogin()">Login</a>
+</p>
+
+</div>
+
+
+<!-- Login Page -->
+
+<div id="login" class="box page">
+
+<h2>Login</h2>
+
+<input type="text" id="loginUser" placeholder="Username">
+
+<input type="password" id="loginPass" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p>
+Don't have an account?
+<a href="#" onclick="showSignup()">Sign Up</a>
+</p>
+
+</div>
+
+
+<!-- Dashboard -->
+
+<div id="home" class="box page">
+
+<h2>Country Capital Finder</h2>
+
+<input type="text" id="country" placeholder="Enter Country Name">
+
+<button onclick="capital()">Show Capital</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+
+<script>
+
+let username="";
+let password="";
+
+
+function signup()
+{
+    username=document.getElementById("user").value;
+    password=document.getElementById("pass").value;
+
+    alert("Sign Up Successful!");
+
+    showLogin();
+}
+
+
+function login()
+{
+    let u=document.getElementById("loginUser").value;
+    let p=document.getElementById("loginPass").value;
+
+    if(u==username && p==password)
+    {
+        document.getElementById("login").style.display="none";
+        document.getElementById("home").style.display="block";
+    }
+    else
+    {
+        alert("Wrong Username or Password");
+    }
+}
+
+
+function showLogin()
+{
+    document.getElementById("signup").style.display="none";
+    document.getElementById("login").style.display="block";
+}
+
+
+function showSignup()
+{
+    document.getElementById("login").style.display="none";
+    document.getElementById("signup").style.display="block";
+}
+
+
+function capital()
+{
+    let c = document.getElementById("country").value.toLowerCase();
+
+    let ans = "";
+
+    if(c=="india")
+        ans="New Delhi";
+
+    else if(c=="japan")
+        ans="Tokyo";
+
+    else if(c=="china")
+        ans="Beijing";
+
+    else if(c=="france")
+        ans="Paris";
+
+    else if(c=="canada")
+        ans="Ottawa";
+
+    else if(c=="australia")
+        ans="Canberra";
+
+    else if(c=="usa" || c=="united states")
+        ans="Washington, D.C.";
+
+    else if(c=="uk" || c=="united kingdom")
+        ans="London";
+
+    else if(c=="russia")
+        ans="Moscow";
+
+    else if(c=="germany")
+        ans="Berlin";
+
+    else if(c=="italy")
+        ans="Rome";
+
+    else if(c=="brazil")
+        ans="Brasilia";
+
+    else if(c=="mexico")
+        ans="Mexico City";
+
+    else if(c=="south korea")
+        ans="Seoul";
+
+    else if(c=="north korea")
+        ans="Pyongyang";
+
+    else if(c=="pakistan")
+        ans="Islamabad";
+
+    else if(c=="bangladesh")
+        ans="Dhaka";
+
+    else if(c=="nepal")
+        ans="Kathmandu";
+
+    else if(c=="bhutan")
+        ans="Thimphu";
+
+    else if(c=="sri lanka")
+        ans="Sri Jayawardenepura Kotte";
+
+    else if(c=="afghanistan")
+        ans="Kabul";
+
+    else if(c=="saudi arabia")
+        ans="Riyadh";
+
+    else if(c=="uae" || c=="united arab emirates")
+        ans="Abu Dhabi";
+
+    else if(c=="egypt")
+        ans="Cairo";
+
+    else if(c=="south africa")
+        ans="Pretoria";
+
+    else
+        ans="Country Not Found";
+
+    document.getElementById("result").innerHTML = "Capital : " + ans;
+}
+
+</script>
+
+</body>
+</html>
