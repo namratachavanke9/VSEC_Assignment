@@ -1,0 +1,26 @@
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-box {
+  border: 2px solid black;
+  padding: 20px;
+  width: 350px;
+}
+
+.form-box h1 {
+  text-align: center;
+}
+
+.form-box input,
+.form-box select {
+  margin: 5px;
+}
+
+.form-box button {
+  margin-top: 10px;
+}
