@@ -1,7 +1,21 @@
 
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #f5edf3;
+}
+
+nav {
+  background: #913d72;
+  padding: 18px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .container {
@@ -15,11 +29,20 @@ h1, h2 {
   color: #913d72;
 }
 
+.summary {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
 form {
   background: white;
   padding: 20px;
-  text-align: center;
   margin: 20px 0;
+  text-align: center;
+  border-radius: 8px;
 }
 
 input {
@@ -41,6 +64,7 @@ table {
   width: 100%;
   background: white;
   border-collapse: collapse;
+  margin: 20px 0;
 }
 
 th, td {
@@ -51,4 +75,12 @@ th, td {
 
 th {
   background: #ead3e2;
+}
+
+.page-link {
+  display: block;
+  text-align: center;
+  margin: 25px;
+  color: #913d72;
+  font-weight: bold;
 }
